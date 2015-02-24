@@ -1,0 +1,32 @@
+apply plugin: 'java'
+
+sourceSets {
+    bug {
+        java {
+            srcDir 'src/bug/java'
+        }
+        resources {
+            srcDir 'src/bug/resources'
+        }
+    }
+}
+
+test {
+    useTestNG()
+}
+
+task bug(type: Test) {
+    testClassesDir = sourceSets.bug.output.classesDir
+    classpath = sourceSets.bug.runtimeClasspath + sourceSets.main.runtimeClasspath
+
+    useTestNG()
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile "org.testng:testng:6.8.+"
+    bugCompile "org.testng:testng:6.8.+"
+}
