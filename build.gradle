@@ -17,7 +17,7 @@ test {
 
 task bug(type: Test) {
     testClassesDir = sourceSets.bug.output.classesDir
-    classpath = sourceSets.bug.runtimeClasspath + sourceSets.main.runtimeClasspath
+    classpath = sourceSets.bug.runtimeClasspath
 
     useTestNG()
 }
