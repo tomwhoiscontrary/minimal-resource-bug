@@ -1,3 +1,5 @@
+IntelliJ IDEA does correctly handle resources for non-default test source sets
+
 Steps to reproduce
 ------------------
 
